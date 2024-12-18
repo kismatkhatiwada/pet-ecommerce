@@ -124,12 +124,12 @@
         <h2>Meet Our Team</h2>
         <div class="team-members">
             <div class="team-member">
-                <img src="../photos/sudeep.jpg" alt="Team Member 1">
+                <img src="photos/sudeep.jpg" alt="Team Member 1">
                 <h3>Sudip ghimire</h3>
                 <p>Founder & CEO</p>
             </div>
             <div class="team-member">
-                <img src="../photos/kismat.jpg" alt="Team Member 2">
+                <img src="../photos/Screenshot 2024-03-17 124820.png" alt="Team Member 2">
                 <h3>Kismat khatiwada</h3>
                 <p>Head of Operations</p>
             </div>
@@ -144,5 +144,5 @@
 </html>
 
 <footer>
-    <p>&copy; 2024 Pet Pal. All rights reserved. | <a href="../index/index.php">Back to Home</a></p>
+    <p>&copy; 2024 Pet Pal. All rights reserved. | <a href="index.php">Back to Home</a></p>
 </footer>

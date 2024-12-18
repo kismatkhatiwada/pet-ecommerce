@@ -20,14 +20,10 @@ if(!empty($_POST)){
         $errors['email'] = "Invalid email format";
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $password = $_POST['password'] ?? '';
-    
-        if (empty($password)) {
-            $errors['password'] = "Password is required";
-        } elseif (strlen($password) < 8) {
-            $errors['password'] = "Password must be at least 8 characters";
-        }
+    if(empty($password)) {
+        $errors['password'] = "Password is required";
+    }elseif(strlen($password)<8){
+        $errors['password']="Password must be more than 8 characters";
     }
     if(empty($address)) {
         $errors['address'] = "Address is required";
@@ -77,31 +73,16 @@ if(!empty($_POST)){
                 <label for="email" class="icon"><i class="fas fa-envelope"></i></label>
                 <input type="text" id="email" name="email" placeholder="Email" >
                 <?php if(isset($errors['email'])): ?>
-                <span class="error"><?= $errors['email']; ?></span>
+                    <span class="error"><?= $errors['email']; ?></span>
                 <?php endif; ?>
             </div>
             <div class="input-container">
-    <!-- Password Icon -->
-    <label for="password" class="icon">
-        <i class="fas fa-lock"></i>
-    </label>
-
-    <!-- Password Input Field -->
-    <input 
-        type="password" 
-        id="password" 
-        name="password" 
-        placeholder="Password"
-    >
-
-    <!-- Password Visibility Toggle Icon -->
-    <i class="fas fa-eye toggle-icon" id="togglePassword"></i>
-
-    <!-- Error Message Display -->
-    <?php if (isset($errors['password'])): ?>
-        <span class="error"><?= htmlspecialchars($errors['password']); ?></span>
-    <?php endif; ?>
-</div>
+                <label for="password" class="icon"><i class="fas fa-lock"></i></label>
+                <input type="password" id="password" name="password" placeholder="Password" >
+                <?php if(isset($errors['password'])): ?>
+                    <span class="error"><?= $errors['password']; ?></span>
+                <?php endif; ?>
+            </div>
             <div class="input-container">
                 <label for="address" class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></i></label>
                 <input type="address" id="address" name="address" placeholder="Address" >
@@ -125,17 +106,3 @@ if(!empty($_POST)){
     </div>
 </body>
 </html>
-<script>
-    const passwordInput = document.getElementById('password');
-    const togglePasswordIcon = document.getElementById('togglePassword');
-
-    togglePasswordIcon.addEventListener('click', () => {
-        // Toggle the password visibility
-        const type = passwordInput.type === 'password' ? 'text' : 'password';
-        passwordInput.type = type;
-
-        // Toggle the eye icon
-        togglePasswordIcon.classList.toggle('fa-eye');
-        togglePasswordIcon.classList.toggle('fa-eye-slash');
-    });
-</script>

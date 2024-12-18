@@ -1,11 +1,6 @@
-<?php
-
-require('../connection.php');
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +14,8 @@ session_start();
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
-            color: #333; /* Text color */
+            color: #333;
+            /* Text color */
         }
 
         .container {
@@ -37,7 +33,8 @@ session_start();
         }
 
         header h1 {
-            color: #4CAF50; /* Greenish color for headings */
+            color: #4CAF50;
+            /* Greenish color for headings */
         }
 
         section {
@@ -85,69 +82,73 @@ session_start();
             border-radius: 50%;
             margin-bottom: 10px;
         }
-
-       
-
-        
     </style>
 </head>
+
 <body>
 
+    <div class="container">
+        <header>
+            <h1>About Pet Pal</h1>
+            <p>Welcome to Pet Pal, where pets are family! We are dedicated to enriching the lives of pets and their
+                owners through exceptional products and heartfelt services.</p>
+        </header>
 
-<div class="container">
-    <header>
-        <h1>About Pet Pal</h1>
-        <p>Welcome to Pet Pal, where pets are family! We are dedicated to enriching the lives of pets and their owners through exceptional products and heartfelt services.</p>
-    </header>
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>At Pet Pal, our mission is to foster the well-being of pets by promoting responsible pet ownership,
+                providing superior pet care products, and supporting animal welfare initiatives. We aim to create a
+                community where every pet receives the love and care they deserve.</p>
+        </section>
 
-    <section id="mission">
-        <h2>Our Mission</h2>
-        <p>At Pet Pal, our mission is to foster the well-being of pets by promoting responsible pet ownership, providing superior pet care products, and supporting animal welfare initiatives. We aim to create a community where every pet receives the love and care they deserve.</p>
-    </section>
+        <section id="values">
+            <h2>Our Values</h2>
+            <div class="values-list">
+                <div class="value">
+                    <h3>Compassion</h3>
+                    <p>We demonstrate compassion by treating all pets with kindness, empathy, and respect, ensuring
+                        their well-being is our top priority.</p>
+                </div>
+                <div class="value">
+                    <h3>Integrity</h3>
+                    <p>We uphold the highest standards of integrity, honesty, and transparency in our interactions with
+                        customers, partners, and communities.</p>
+                </div>
+                <div class="value">
+                    <h3>Quality</h3>
+                    <p>We are committed to providing superior quality products and services that meet the diverse needs
+                        of pet owners, ensuring the health and happiness of their pets.</p>
+                </div>
+                <div class="value">
+                    <h3>Community</h3>
+                    <p>We value building strong relationships within our community, fostering a supportive environment
+                        for pet owners and animal lovers alike.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="values">
-        <h2>Our Values</h2>
-        <div class="values-list">
-            <div class="value">
-                <h3>Compassion</h3>
-                <p>We demonstrate compassion by treating all pets with kindness, empathy, and respect, ensuring their well-being is our top priority.</p>
+        <section id="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="../photos/sudeep.jpg" alt="Team Member 1">
+                    <h3>Sudeep Ghimire</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="../photos/kismat.jpg" alt="Team Member 2">
+                    <h3>kismat Khatiwada</h3>
+                    <p>Head of Operations</p>
+                </div>
+                <!-- Add more team members as needed -->
             </div>
-            <div class="value">
-                <h3>Integrity</h3>
-                <p>We uphold the highest standards of integrity, honesty, and transparency in our interactions with customers, partners, and communities.</p>
-            </div>
-            <div class="value">
-                <h3>Quality</h3>
-                <p>We are committed to providing superior quality products and services that meet the diverse needs of pet owners, ensuring the health and happiness of their pets.</p>
-            </div>
-            <div class="value">
-                <h3>Community</h3>
-                <p>We value building strong relationships within our community, fostering a supportive environment for pet owners and animal lovers alike.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="team">
-        <h2>Meet Our Team</h2>
-        <div class="team-members">
-            <div class="team-member">
-                <img src="../photos/sudeep.jpg" alt="Team Member 1">
-                <h3>Sudip Ghimire</h3>
-                <p>Founder & CEO</p>
-            </div>
-            <div class="team-member">
-                <img src="../photos/kismat.jpg" alt="Team Member 2">
-                <h3>Kismat Khatiwada</h3>
-                <p>Head of Operations</p>
-            </div>
-            <!-- Add more team members as needed -->
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 
 
 
 </body>
+
 </html>
 
 <footer>

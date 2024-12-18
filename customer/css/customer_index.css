@@ -64,12 +64,10 @@ nav ul ul li {
 nav ul ul li a {
     color: white;
 }
-.fa-shopping-cart{
-    color: white;
+.fas fa-shopping-cart{
+    background-color: white;
 }
-.fa-shopping-cart:hover{
-    color: rgb(224, 227, 7);
-}
+
 
 /* /////////////////////////////////content//////////////////////// */
 #content {
@@ -127,13 +125,12 @@ nav ul ul li a {
 }
 
 #feature .f-box {
-    background-color: #eceeef;
     width: 190px;
     height: 170px;
     text-align: center;
     padding: 25px 15px;
     box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.6);
-    border: none;
+    border: 1px solid white;
     margin: 15px 0;
 }
 
@@ -206,6 +203,7 @@ nav ul ul li a {
     grid-gap: 10px;
     padding: 20px;
     justify-content: center;
+    
 }
 
 .item {
@@ -213,6 +211,7 @@ nav ul ul li a {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
+    border: 1px solid rgb(229, 215, 215);
 }
 
 .item:hover {
@@ -267,6 +266,7 @@ nav ul ul li a {
 
 /* View button */
 .view-button {
+    position: relative;
     display: inline-block;
     margin-top: 10px; /* Adjust as needed */
     text-decoration: none;
@@ -286,6 +286,7 @@ nav ul ul li a {
    
 }
 
+
 /* /////////Foot//////////////////////////// */
 .foot {
     width: auto;
@@ -298,7 +299,7 @@ nav ul ul li a {
     align-items: center; 
     flex-direction: column;
     margin-top: 40px;
-    /* border-radius: 10px; */
+    
 }
 
 .foot h1 {
@@ -372,12 +373,15 @@ footer {
    width: 30%;
    
 }
+
+
 .footer .content h4 {
     margin-bottom: 10px;
     font-size: 18px;
 }
 
 .footer .content p {
+
     margin-bottom: 5px;
 }
 
@@ -398,7 +402,6 @@ footer {
     position: relative;
     right: 10px;
 }
-
 
 .details{
     position: relative;

@@ -57,7 +57,7 @@ if (!empty($_POST)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="../css/customer_login.css">
+    <link rel="stylesheet" href="../customer/css/customer_login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -86,7 +86,7 @@ if (!empty($_POST)) {
 
             <button type="submit">Login</button>
         </form>
-        <span>Don't have an account? </span><a href="customer_register.php" class="signup"> Sign up here</a>
+        <a href="customer_register.php" class="signup">Don't have an account? Sign up here</a>
     </div>
 </body>
 </html>
