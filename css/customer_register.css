@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #3498db, #050008);
+    color: red;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent background color for the login container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.icon {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #ccc;
+}
+.input-container{
+    position: relative;
+    left: 20px;
+}
+.input-container input {
+   
+    width: calc(100% - 40px);
+    padding: 10px;
+    padding-left: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.link-container span {
+    color: #666;
+}
+
+.link-container a {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
+.error{
+    position: relative;
+    left: 100px;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-container label.icon {
+    position: absolute;
+    left: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Space for lock icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.input-container .toggle-icon {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: #666;
+    cursor: pointer;
+}
+
+.error {
+    color: rgb(2, 2, 2);
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}

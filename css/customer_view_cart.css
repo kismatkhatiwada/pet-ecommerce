@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+nav li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    transition: 0.3s ease;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+nav li a:hover {
+    background-color: grey;
+    color: white;
+}
+
+nav ul ul {
+    position: absolute;
+    display: none;
+    padding: 5px;
+}
+
+nav ul .dropdown:hover ul {
+    position: absolute;
+    display: block;
+    flex-direction: column;
+    right: 0;
+}
+
+nav ul ul li {
+    margin-top: 12px;
+}
+
+nav ul ul li a {
+    color: white;
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td img{
+            height: 70px;
+            width: 80px;
+            
+        }
+
+        .total-row td {
+            font-weight: bold;
+        }
+ td button{
+    background-color: blue;
+    color: whitesmoke;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ td button:hover{
+    background-color: rgb(64, 71, 117);
+ }

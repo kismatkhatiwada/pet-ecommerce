@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+nav ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+nav li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  transition: 0.3s ease;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+nav li a:hover {
+  background-color: grey;
+  color: white;
+}
+
+nav ul ul {
+  position: absolute;
+  display: none;
+  padding: 5px;
+}
+
+nav ul .dropdown:hover ul {
+  position: absolute;
+  display: block;
+  flex-direction: column;
+  right: 0;
+}
+
+nav ul ul li {
+  margin-top: 12px;
+}
+
+nav ul ul li a {
+  color: white;
+}
+
+#header .fa-paw {
+  color: white;
+  position: relative;
+  font-size: 60px;
+  right: 55px;
+}
+
+.container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  position: relative;
+  z-index: 999;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 5px;
+}
+
+div.about {
+  display: flex;
+  width: 80%;
+  gap: 15px;
+}
+
+div.image {
+  height: 100%;
+}
+
+div.buttons {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 0.5rem 0;
+}

@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+.buttons button{
+    /* background-color:orange; */
+    border: none;
+    border-radius: 5px;
+    padding:10px 20px;
+
+}
+.buttons .order:hover{
+    background-color: orange;
+}
+.buttons .logout{
+    background-color: rgb(234, 216, 216);
+
+}
+.buttons .logout:hover{
+    background-color: rgb(120, 128, 181);
+}
+.add{
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add:hover{
+    background-color: #2ecc71;
+}
+.add_breed{
+    position: relative;
+    right: 150px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add_breed:hover{
+    background-color: #2ecc71;
+}
+
+.table-container {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #34495e;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #e5e5e5;
+}
+
+.update-btn,
+.delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.update-btn:hover{
+
+    background-color: #27ae60;
+}
+.delete-btn:hover {
+    background-color: #cc796b;
+}
