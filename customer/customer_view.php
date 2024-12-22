@@ -89,7 +89,6 @@ $dquantity = mysqli_fetch_assoc($dresult);
         <?php } ?>
     </div>
 
-
 </body>
 
 </html>
