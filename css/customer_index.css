@@ -386,8 +386,7 @@ footer {
   border-bottom: 1px solid #971717;
 }
 .services p {
-  /* position: relative; */
-  /* text-align: start; */
+  position: relative;
   text-align: justify;
   right: 20px;
 }
