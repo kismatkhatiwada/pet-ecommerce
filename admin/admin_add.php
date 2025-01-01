@@ -215,7 +215,7 @@ if (!empty($_POST)) {
         <input type="text" name="color" required>
 
         <label for="quantity">Quantity</label>
-        <input type="text" name="quantity" required>
+        <input type="text" name="quantity" placeholder="Enter value more than 0" required>
         </select>
 
 
