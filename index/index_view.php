@@ -43,8 +43,8 @@ if (isset($_GET['id'])) {
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index_about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <a href="index_view_cart.php" id="cart-icon" class="icon"><i class="fas fa-shopping-cart"></i> <span
-                        id="cart-badge" class="badge"></span></a>
+                <a href="../customer/customer_login.php" id="cart-icon" class="icon"><i
+                        class="fas fa-shopping-cart"></i> <span id="cart-badge" class="badge"></span></a>
             </ul>
         </nav>
     </div>
