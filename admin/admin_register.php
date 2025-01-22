@@ -1,18 +1,26 @@
- <?php
+<?php
 require_once "../connection.php";
 
+if (!empty($_POST)) { 
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-if(!empty($_POST)){ 
-   
-    $email=$_POST['email'];
-    $password=md5($_POST['password']);
-    $sql="INSERT INTO admin (email, password) VALUES ( '$email','$password')";
-    $result=mysqli_query($conn,$sql);
-    if($result){
-        
-       echo "Registration successful";
+    // Server-side validation for password length
+    if (strlen($password) < 8) {
+        echo "Password must be at least 8 characters long.";
+    } else {
+        // Encrypt password
+        $password = md5($password);
+
+        $sql = "INSERT INTO admin (email, password) VALUES ('$email', '$password')";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            echo "Registration successful";
+        } else {
+            echo "Error in registration: " . mysqli_error($conn);
+        }
     }
-    
 }
 ?>
 
@@ -27,14 +35,16 @@ if(!empty($_POST)){
 <body>
     <div class="register-container">
         <h2>Register</h2>
-        <form action=""method="post">
+        <form action="" method="post">
             <div class="input-group">
                 <label for="email">Email</label>
                 <input type="email" name="email" required>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" required>
+                <!-- HTML validation for password length -->
+                <input type="password" name="password" minlength="8" required>
+                <small>Password must be at least 8 characters long.</small>
             </div>
             <button type="submit">Register</button>
             <div class="link-container">
