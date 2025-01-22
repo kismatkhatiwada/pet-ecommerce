@@ -20,6 +20,14 @@ if (!empty($_POST)) {
         $errors['email'] = "Email is required";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors['email'] = "Invalid email format";
+    } else {
+        // Check if email is already registered
+        $emailCheckQuery = "SELECT id FROM customer WHERE email = '$email'";
+        $emailCheckResult = mysqli_query($conn, $emailCheckQuery);
+
+        if (mysqli_num_rows($emailCheckResult) > 0) {
+            $errors['email'] = "Email is already registered.";
+        }
     }
 
     if (empty($password)) {
