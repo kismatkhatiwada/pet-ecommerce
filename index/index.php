@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="index_about.php">About</a></li>
-                <li><a href="index_contact.php">Contact</a></li>
+                <!-- <li><a href="index_contact.php">Contact</a></li> -->
                 <li><a href="../duallogin_page.php">Login</a></li>
                 <a href="../customer/customer_login.php" id="cart-icon" class="icon"><i
                         class="fas fa-shopping-cart"></i> <span id="cart-badge" class="badge"></span></a>
@@ -154,7 +154,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <h4>Quick links</h4>
                     <p><a href="index.php">Home</a></p>
                     <p><a href="index_about.php">About</a></p>
-                    <p><a href="index_contact.php">Contact</a></p>
+                    <!-- <p><a href="index_contact.php">Contact</a></p> -->
                     <p><a href="#shopnow">shop</a></p>
                 </div>
                 <div class="details">

@@ -41,7 +41,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             <ul>
                 <li><a href="customer_index.php">Home</a></li>
                 <li><a href="customer_about.php">About</a></li>
-                <li><a href="customer_contact.php">Contact</a></li>
+                <!-- <li><a href="customer_contact.php">Contact</a></li> -->
                 <li><a href="orders.php">Orders</a></li>
                 <li><a href="../index/index.php">Logout</a></li>
 
@@ -143,7 +143,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     <h4>Quick links</h4>
                     <p><a href="customer_index.php">Home</a></p>
                     <p><a href="customer_about.php">About</a></p>
-                    <p><a href="customer_contact.php">Contact</a></p>
+                    <!-- <p><a href="customer_contact.php">Contact</a></p> -->
                     <p><a href="#shopnow">Shop</a></p>
                 </div>
                 <div class="details">
