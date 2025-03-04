@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="index_about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <!-- <li><a href="contact.php">Contact</a></li> -->
                 <a href="../customer/customer_login.php" id="cart-icon" class="icon"><i
                         class="fas fa-shopping-cart"></i> <span id="cart-badge" class="badge"></span></a>
             </ul>

@@ -45,7 +45,7 @@ $dquantity = mysqli_fetch_assoc($dresult);
             <ul>
                 <li><a href="../customer/customer_index.php">Home</a></li>
                 <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <!-- <li><a href="contact.php">Contact</a></li> -->
                 <li><a href="orders.php">Orders</a></li>
                
                 <a href="customer_view_cart.php" id="cart-icon" class="icon"><i class="fas fa-shopping-cart"></i> <span id="cart-badge" class="badge"></span></a>
