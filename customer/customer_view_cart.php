@@ -105,8 +105,8 @@ $totalPrice = 0;
                     <td><img src="../photos/<?= $row['image'] ?>" >  </td>
                     <td><?= $row['price'] ?></td> 
                     
-                    <td><a href="./cart_item_delete.php?cid=<?=$row['cart_id']?>">Delete</a></td> 
-                    <td><a href="checkout.php?dog_id=<?=$row['did']?>&cid=<?=$_SESSION['user_id']?>"<button>Place order</button></a></td>
+                    <td><a href="./cart_item_delete.php?cid=<?=$row['cart_id']?>">Delete</a></td>
+                    <td><a href="../customer/checkout.php?dog_id=<?=$row['did']?>&cid=<?=$_SESSION['user_id']?>"><button>Place order</button></a></td>
                 </tr>
             <?php } ?>
         </tbody>

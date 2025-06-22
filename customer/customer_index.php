@@ -40,7 +40,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <nav>
             <ul>
                 <li><a href="customer_index.php">Home</a></li>
-                <li><a href="customer_about.php">About</a></li>
+                <!-- <li><a href="customer_about.php">About</a></li> -->
                 <!-- <li><a href="customer_contact.php">Contact</a></li> -->
                 <li><a href="orders.php">Orders</a></li>
                 <li><a href="../index/index.php">Logout</a></li>

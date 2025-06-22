@@ -44,7 +44,7 @@ $dquantity = mysqli_fetch_assoc($dresult);
        <nav>
             <ul>
                 <li><a href="../customer/customer_index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
+                <!-- <li><a href="about.php">About</a></li> -->
                 <!-- <li><a href="contact.php">Contact</a></li> -->
                 <li><a href="orders.php">Orders</a></li>
                
@@ -81,7 +81,7 @@ $dquantity = mysqli_fetch_assoc($dresult);
                 </a>
             </div>
             <div class="buy">
-                <a href="checkout.php?dog_id=<?= $dog['id'] ?>&cid=<?= $_SESSION['user_id'] ?>">
+                <a href="../customer/checkout.php?dog_id=<?= $dog['id'] ?>&cid=<?= $_SESSION['user_id'] ?>">
                     <button>Buy Now</button>
                 </a>
             </div>

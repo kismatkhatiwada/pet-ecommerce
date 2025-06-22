@@ -1,67 +1,93 @@
-<?php 
+<?php
+session_start();
 require('../connection.php');
-if (!empty($_POST)) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $address = $_POST['address'];
-    $cid = $_POST['customer_id'];
-    $dog_id = $_POST['dog_id'];
 
-    $sql = "INSERT INTO orders(name,email,address,customer_id,dog_id) 
-            VALUES ('$name','$email','$address',$cid,$dog_id)";
-   
-    $dogSql = "SELECT quantity FROM dogs WHERE id=".$dog_id;
-    $qtyResult = mysqli_query($conn, $dogSql);
-    $qtyData = mysqli_fetch_assoc($qtyResult);
-    $qtyAmt= $qtyData['quantity'];
-    $qtySQL = "UPDATE dogs SET quantity = ". $qtyAmt ." - 1 WHERE id =  ".$dog_id; 
-    $qResult = mysqli_query($conn, $qtySQL);
-    $result = mysqli_query($conn, $sql);
-    if ($result) { 
-        // echo "Success";
-        header('Location:customer_index.php');
-    }else{
-        echo "Failed to add";
-    }
+function generateEsewaSignature($total_amount, $transaction_uuid, $product_code, $secret_key)
+{
+    $data = "total_amount={$total_amount},transaction_uuid={$transaction_uuid},product_code={$product_code}";
+    $hash = hash_hmac('sha256', $data, $secret_key, true);
+    return base64_encode($hash);
 }
+
+$product_code = 'EPAYTEST';
+$secret_key = '8gBm/:&EnhH.1/q';
+$transaction_uuid = uniqid('TXN_');
+
+$dog_id = $_GET['dog_id'];
+
+$dogSql = "SELECT price FROM dogs WHERE id=" . $dog_id;
+$dogResult = mysqli_query($conn, $dogSql);
+$dogData = mysqli_fetch_assoc($dogResult);
+$amount = $dogData['price'];
+$tax_amount = 0;
+$total_amount = $amount + $tax_amount;
+
+$signature = generateEsewaSignature($total_amount, $transaction_uuid, $product_code, $secret_key);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['name'] = $_POST['name'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['address'] = $_POST['address'];
+    header("Location: customer/checkout.php?dog_id=$dog_id");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Order</title>
-    
+
 </head>
+
 <body>
     <div class="container">
         <h1>Order Details</h1>
         <h2>Checkout</h2>
-        <form class="checkout-form" action="checkout.php" method="POST">
+        <form id="esewaForm" class="checkout-form" action="https://rc-epay.esewa.com.np/api/epay/main/v2/form"
+            method="POST">
             <!-- Here you can add fields for the user to enter their information -->
             <!-- For example: -->
+            <input type="hidden" name="amount" value="<?= $amount ?>">
+            <input type="hidden" name="tax_amount" value="<?= $tax_amount ?>">
+            <input type="hidden" name="total_amount" value="<?= $total_amount ?>">
+            <input type="hidden" name="transaction_uuid" value="<?= $transaction_uuid ?>">
+            <input type="hidden" name="product_code" value="<?= $product_code ?>">
+            <input type="hidden" name="product_service_charge" value="0">
+            <input type="hidden" name="product_delivery_charge" value="0">
+            <input type="hidden" name="success_url"
+                value="http://localhost/pet_ecommerce/success.php?dog_id=<?= $_GET['dog_id'] ?>">
+            <input type="hidden" name="failure_url" value="http://localhost/pet_ecommerce/failure.php">
+            <input type="hidden" name="signed_field_names" value="total_amount,transaction_uuid,product_code">
+            <input type="hidden" name="signature" value="<?= $signature ?>">
             <input type="hidden" name="dog_id" value="<?php if (isset($_GET['dog_id'])) {
                 echo $_GET['dog_id'];
-            }?> ">
+            } ?> ">
             <input type="hidden" name="customer_id" value="<?php if (isset($_GET['cid'])) {
                 echo $_GET['cid'];
-            }?>">
+            } ?>">
+            <input type="hidden" name="name" value="<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>">
+            <input type="hidden" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
+            <input type="hidden" name="address"
+                value="<?php echo isset($_SESSION['address']) ? $_SESSION['address'] : ''; ?>">
             <div class="order-details">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" value="<?php echo isset($_SESSION['name']) ? $_SESSION['name'] : ''; ?>" required>
             </div>
             <div class="order-details">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" required>
             </div>
             <div class="order-details">
                 <label for="address">Address:</label>
-                <textarea id="address" name="address" required></textarea>
+                <textarea id="address" name="address" required><?php echo isset($_SESSION['address']) ? $_SESSION['address'] : ''; ?></textarea>
             </div>
             <!-- Add more fields as needed (e.g., for payment information) -->
-            <button onclick="alert('Ordered successfully');" type="submit">Proceed to Checkout</button>
-
+            <button type="submit">Proceed to Checkout</button>
 
 
         </form>
@@ -134,6 +160,6 @@ if (!empty($_POST)) {
     </style>
 
 
-
 </body>
+
 </html>
